@@ -1,0 +1,78 @@
+{
+  "name": "barcode-scanner",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start-dev": "export SCAN_MODE=basic && yarn config:env && ng serve",
+    "start-fake": "export SCAN_MODE=manual && yarn config:env && ng serve",
+    "start-prod": "yarn build-prod && yarn start",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "prety": "prettier --write \"src/**/*.ts\"",
+    "config:env": "ts-node set-env.mjs",
+    "start": "ng serve",
+    "build-prod": "yarn config:env && ng build --output-path dist",
+    "postinstall": "yarn build-prod"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~9.1.6",
+    "@angular/cli": "~9.1.5",
+    "@angular/compiler-cli": "~9.1.6",
+    "@angular/common": "~9.1.6",
+    "@angular/compiler": "~9.1.6",
+    "@angular/core": "~9.1.6",
+    "@angular/forms": "~9.1.6",
+    "@angular/platform-browser": "~9.1.6",
+    "@angular/platform-browser-dynamic": "~9.1.6",
+    "@angular/router": "~9.1.6",
+    "bootstrap": "^4.5.0",
+    "jsbarcode": "3.11.0",
+    "ngx-barcode6": "^1.0.10",
+    "prettier": "^2.0.5",
+    "quagga": "^0.12.1",
+    "rxjs": "~6.5.4",
+    "scandit-sdk": "^4.6.3",
+    "scandit-sdk-angular": "^2.0.7",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.901.5",
+    "@testing-library/angular": "^9.2.2",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "husky": "^4.2.5",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~3.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "lint-staged": "^10.2.2",
+    "pretty-quick": "^2.0.1",
+    "protractor": "~5.4.3",
+    "tslint": "~6.1.0",
+    "typescript": "~3.8.3",
+    "dotenv": "^5.0.0",
+    "ts-node": "~8.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,css,md}": "prettier --write"
+  },
+  "engines": {
+    "node": "12.18.0",
+    "yarn": "1.22.4",
+    "npm": "6.14.4"
+  }
+}

@@ -1,0 +1,6 @@
+<div>
+  <app-scan
+    [scannerType]="this.env.scanMode"
+    (scannedCode)="this.onScannedCode($event)"
+  ></app-scan>
+</div>
